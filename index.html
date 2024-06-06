@@ -38,7 +38,31 @@
         h1, p {
             margin: 5px 0; /* Further reduce margin */
         }
+        .info-tab {
+            display: none; /* Initially hide the info tab */
+            background-color: rgba(255, 255, 255, 0.75); /* Set background opacity to 75% */
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .show-info {
+            cursor: pointer;
+            text-decoration: underline;
+            color: rgb(255, 251, 0);
+            margin-top: 10px;
+            font-weight: bold; /* Make the text bold */
+        }
     </style>
+    <script>
+        function toggleInfo() {
+            var infoTab = document.querySelector('.info-tab');
+            infoTab.style.display = (infoTab.style.display === 'none' || infoTab.style.display === '') ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="background-white">
@@ -54,5 +78,9 @@
     <a href="https://www.instagram.com/feuerrot.art" target="_blank">
         <img src="instagram_icon_toast.png" alt="Instagram" width="100" height="100">
     </a>
+    <div class="info-tab" id="infoTab">
+        <p>Tauben gehören zum Stadtbild. Oft als Ratten der Lüfte bezeichnet, erfreuen sich aber oft nicht der größten Beliebtheit. Für manche sind sie einfach ein Ärgernis, dem man besser aus dem Weg geht, um nicht unglücklicherweise im falschen Moment unter ihnen zu stehen. Andere sind weit aus grausamer und jagen oder treten nach ihnen, aber drehen wir den Spieß mal um: Eine riesige Taube steht vor dir, beugt sich runter und PICK! Einfach weil du da bist.</p>
+    </div>
+    <p class="show-info" onclick="toggleInfo()">Was passiert hier?!</p>
 </body>
 </html>
